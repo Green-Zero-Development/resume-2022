@@ -1,5 +1,6 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { Configuration, setup } from "twind";
+import { Configuration, setup, tw } from "twind";
+import { css } from 'twind/css';
 export * from "twind";
 export const config: Configuration = {
   theme: {
@@ -8,14 +9,34 @@ export const config: Configuration = {
         'ibm-serif': '"IBM Plex Serif"',
       },
       screens: {
-        xs: '416px',
-        sm: '576px',
-        md: '768px',
-        lg: '992px',
-        xl: '1200px',
+        'xs': {'min': '416px'},
+        'sm': '576px',
+        'md': {'min': '768px'},
+        'lg': '992px',
+        'xl': '1200px',
         '2xl': '1440px',
         '3xl': '1441px',
         '4xl': '2000px'
+      },
+      colors: {
+        transparent: 'transparent',
+        'coolgray': "#f8f8f8",
+        'coolblack': '#222222',
+        black: '#000000',
+        white: '#fff',
+        blue: '#00f',
+        red: '#ff5733',
+        gray: {
+          100: '#f7fafc',
+          200: '#edf2f7',
+          300: '#e2e8f0',
+          400: '#cbd5e0',
+          500: '#a0aec0',
+          600: '#718096',
+          700: '#4a5568',
+          800: '#2d3748',
+          900: '#1a202c',
+        },
       },
       maxWidth: {
         xs: '20rem',
@@ -51,17 +72,39 @@ export const config: Configuration = {
         '7xl': '4.5rem',
         '8xl': '6rem'
       },
+      borderColor: theme => ({
+        ...theme('colors'),
+        default: theme('colors.gray.300', 'currentColor'),
+      }),
     },
   },
   preflight: {
-    '@font-face': {
-      fontFamily: 'IBM Plex Serif',
-      fontWeight: '700',
-      src: 'url(/fonts/ibm-plex-serif-v15-latin/ibm-plex-serif-v15-latin-700.woff2) format("woff2")',
+    a: {
+      color: '#00f',
+      textDecoration: 'none'
     },
+    '@font-face': [
+      {
+        fontFamily: 'IBM Plex Serif',
+        fontWeight: '500',
+        src: 'url(/fonts/ibm-plex-serif-v15-latin/ibm-plex-serif-v15-latin-regular.woff2) format("woff2")',
+      },
+      {
+        fontFamily: 'IBM Plex Serif',
+        fontWeight: '100',
+        src: 'url(/fonts/ibm-plex-serif-v15-latin/ibm-plex-serif-v15-latin-100.woff2) format("woff2")',
+      },
+      {
+        fontFamily: 'IBM Plex Serif',
+        fontWeight: '700',
+        src: 'url(/fonts/ibm-plex-serif-v15-latin/ibm-plex-serif-v15-latin-700.woff2) format("woff2")',
+      },
+    ],
   },
   darkMode: "class",
   mode: "silent",
 };
+
+
 
 if (IS_BROWSER) setup(config);

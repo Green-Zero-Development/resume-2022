@@ -22,7 +22,7 @@ export default function Header() {
   const mobileNavSection = tw`flex flex-wrap`;
   const ul = tw`flex font-ibm-serif font-bold lowercase text-white desktop-menu`;
   const mobileul = tw`absolute top-24 left-0 w-full font-ibm-serif font-bold lowercase text-3xl px-6 z-50`;
-  const navLink = tw`pr-12 desktop-menu-item`;
+  const navLink = tw`text-white pr-12 desktop-menu-item`;
   const mobileNavLink = tw`py-4 underline desktop-menu-item`;
   const socialIcons = tw`hidden md:flex items-center`;
   const mobileSocialIcons = tw`absolute top-80 left-0 flex items-center pt-12`;
@@ -31,8 +31,8 @@ export default function Header() {
   const gitHubLinkActive = tw`w-12 mx-6`;
   const linkedInLinkActive = tw`w-12`;
   const mobileMenuClass = tw`hidden absolute top-0 left-0 w-full h-full bg-white`;
-  const mobileMenuClassActive = tw`absolute top-0 left-0 w-full h-screen bg-white`;
-  const mobileMenuTrig = tw`md:hidden absolute bottom-0 left-0 w-full pb-16`;
+  const mobileMenuClassActive = tw`fixed top-0 left-0 w-full h-screen bg-white`;
+  const mobileMenuTrig = tw`md:hidden fixed bottom-0 left-0 w-full pb-16`;
   const mobileMenuTrigActive = tw`hidden absolute bottom-0 left-0 w-full pb-16`;
   const mobileMenuIcon = tw`w-10 mx-auto`;
   const mobileMenuClose = tw`hidden absolute bottom-0 left-0 w-full pb-16 z-50`;
@@ -44,7 +44,7 @@ export default function Header() {
         <div class={headerBox}>
             <div class={logoBox}>
                 <div class={logo}>
-                    <a id="logo-text" class={tw`flex text-left`} href={logoLink}>
+                    <a id="logo-text" class={tw`flex text-white text-left`} href={logoLink}>
                         <h1 class={mobileMenuActive ? mobileh1 : h1}>
                         <div class={mobileMenuActive ? mobileh1border : h1border}></div>
                         brendon folsom</h1>
@@ -53,14 +53,14 @@ export default function Header() {
             </div>
             <nav id="navigation-wrapper" class={mobileMenuActive ? mobileNavSection : navSection}>
                 <ul class={mobileMenuActive ? mobileul : ul}>
-                    <li class={mobileMenuActive ? mobileNavLink : navLink}>
-                        <a href="/">what I can do</a>
+                    <li>
+                        <a href="/" class={mobileMenuActive ? mobileNavLink : navLink}>what I can do</a>
                     </li>
-                    <li class={mobileMenuActive ? mobileNavLink : navLink}>
-                        <a href="/">resume</a>
+                    <li>
+                        <a href="/" class={mobileMenuActive ? mobileNavLink : navLink}>resume</a>
                     </li>
-                    <li class={mobileMenuActive ? mobileNavLink : navLink}>
-                        <a href="/">portfolio</a>
+                    <li>
+                        <a href="/" class={mobileMenuActive ? mobileNavLink : navLink}>portfolio</a>
                     </li>
                 </ul>
                 <div class={mobileMenuActive ? mobileSocialIcons : socialIcons} style="z-index: 50">
@@ -84,6 +84,5 @@ export default function Header() {
             </div>
         </div>
     </section>
-    
   );
 }
