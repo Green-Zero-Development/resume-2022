@@ -34,9 +34,9 @@ export default function Header() {
   const mobileMenuClassActive = tw`fixed top-0 left-0 w-full h-screen bg-white`;
   const mobileMenuTrig = tw`md:hidden fixed bottom-0 left-0 w-full pb-16`;
   const mobileMenuTrigActive = tw`hidden absolute bottom-0 left-0 w-full pb-16`;
-  const mobileMenuOuterIcon = tw`relative w-12 mx-auto`;
-  const mobileMenuInnerIcon = tw`absolute w-12 h-8 top-2 bg-white mx-auto z-10`;
-  const mobileMenuIconPath = tw`relative w-12 mx-auto z-20`;
+  const mobileMenuOuterIcon = tw`relative w-10 mx-auto`;
+  const mobileMenuInnerIcon = tw`absolute w-10 h-8 top-2 bg-white mx-auto z-10`;
+  const mobileMenuIconPath = tw`relative w-10 mx-auto z-20`;
   const mobileMenuClose = tw`hidden absolute bottom-0 left-0 w-full pb-16 z-50`;
   const mobileMenuCloseActive = tw`fixed bottom-0 left-0 w-full pb-16`;
   return (
