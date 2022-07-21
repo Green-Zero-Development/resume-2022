@@ -1,7 +1,6 @@
 /** @jsx h */
 import { h } from "preact";
 import { useState } from "preact/hooks";
-import { IS_BROWSER } from "$fresh/runtime.ts";
 import { tw } from "@twind";
 
 export default function Header() {
@@ -9,7 +8,7 @@ export default function Header() {
   const trigMobileMenu = () => {
     mobileMenuToggle(current => !current)
   }
-  const headerSection = tw`bg-black pt-3 pb-2 z-50 header-container`;
+  const headerSection = tw`fixed w-full bg-black pt-3 pb-2 z-50 header-container`;
   const headerBox = tw`flex justify-between mx-auto px-2 md:px-6 xl:px-16`;
   const logoBox = tw`col-span-2 md:col-span-1 flex flex-wrap mx-auto md:ml-0 pt-1 select-none header-box`;
   const logo = tw`text-2xl xs:text-3xl sm:text-4xl md:text-4xl z-50`;
@@ -22,8 +21,9 @@ export default function Header() {
   const mobileNavSection = tw`flex flex-wrap`;
   const ul = tw`flex font-ibm-serif font-bold lowercase text-white desktop-menu`;
   const mobileul = tw`absolute top-24 left-0 w-full font-ibm-serif font-bold lowercase text-3xl px-6 z-50`;
-  const navLink = tw`text-white pr-12 desktop-menu-item`;
-  const mobileNavLink = tw`py-4 underline desktop-menu-item`;
+  const navLink = tw`text-white pr-12 hover:underline desktop-menu-item`;
+  const mobileNavListItem = tw`py-4 md:py-0`;
+  const mobileNavLink = tw`text-black underline py-4 desktop-menu-item`;
   const socialIcons = tw`hidden md:flex items-center`;
   const mobileSocialIcons = tw`absolute top-80 left-0 flex items-center pt-12`;
   const gitHubLink = tw`w-6 mx-6`;
@@ -34,11 +34,9 @@ export default function Header() {
   const mobileMenuClassActive = tw`fixed top-0 left-0 w-full h-screen bg-white`;
   const mobileMenuTrig = tw`md:hidden fixed bottom-0 left-0 w-full pb-16`;
   const mobileMenuTrigActive = tw`hidden absolute bottom-0 left-0 w-full pb-16`;
-  const mobileMenuIcon = tw`w-10 mx-auto`;
+  const mobileMenuIcon = tw`w-10 bg-white mx-auto`;
   const mobileMenuClose = tw`hidden absolute bottom-0 left-0 w-full pb-16 z-50`;
   const mobileMenuCloseActive = tw`absolute bottom-0 left-0 w-full pb-16`;
-  const btn = tw`bg-white px-2 py-1`;
-  const activeBtn = tw`bg-red-500 px-2 py-1`;
   return (
     <section id="header" class={headerSection}>
         <div class={headerBox}>
@@ -53,14 +51,14 @@ export default function Header() {
             </div>
             <nav id="navigation-wrapper" class={mobileMenuActive ? mobileNavSection : navSection}>
                 <ul class={mobileMenuActive ? mobileul : ul}>
-                    <li>
+                    <li class={mobileNavListItem}>
                         <a href="/" class={mobileMenuActive ? mobileNavLink : navLink}>what I can do</a>
                     </li>
-                    <li>
-                        <a href="/" class={mobileMenuActive ? mobileNavLink : navLink}>resume</a>
+                    <li class={mobileNavListItem}>
+                        <a href="/resume" class={mobileMenuActive ? mobileNavLink : navLink}>resume</a>
                     </li>
-                    <li>
-                        <a href="/" class={mobileMenuActive ? mobileNavLink : navLink}>portfolio</a>
+                    <li class={mobileNavListItem}>
+                        <a href="/portfolio" class={mobileMenuActive ? mobileNavLink : navLink}>portfolio</a>
                     </li>
                 </ul>
                 <div class={mobileMenuActive ? mobileSocialIcons : socialIcons} style="z-index: 50">
@@ -77,7 +75,6 @@ export default function Header() {
                 <svg class={mobileMenuIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM224 368C237.3 368 248 357.3 248 344V280H312C325.3 280 336 269.3 336 256C336 242.7 325.3 232 312 232H248V168C248 154.7 237.3 144 224 144C210.7 144 200 154.7 200 168V232H136C122.7 232 112 242.7 112 256C112 269.3 122.7 280 136 280H200V344C200 357.3 210.7 368 224 368z"/></svg>
             </div>
             <div class={mobileMenuActive ? mobileMenuClassActive : mobileMenuClass}>
-                
                 <div class={mobileMenuActive ? mobileMenuCloseActive : mobileMenuClose} onClick={trigMobileMenu}>
                     <svg class={mobileMenuIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M384 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h320c35.35 0 64-28.65 64-64V96C448 60.65 419.3 32 384 32zM330.3 344.5c8.562 10.11 7.297 25.27-2.828 33.83C323 382.1 317.5 384 312 384c-6.812 0-13.59-2.891-18.34-8.5L224 293.2L154.3 375.5C149.6 381.1 142.8 384 135.1 384C130.5 384 125 382.1 120.5 378.3c-10.12-8.562-11.39-23.72-2.828-33.83L192.6 256L117.7 167.5C109.1 157.4 110.4 142.2 120.5 133.7C130.6 125.1 145.8 126.4 154.3 136.5L224 218.8l69.67-82.34c8.547-10.12 23.72-11.41 33.83-2.828c10.12 8.562 11.39 23.72 2.828 33.83L255.4 256L330.3 344.5z"/></svg>
                 </div>

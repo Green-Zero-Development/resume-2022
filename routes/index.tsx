@@ -1,22 +1,20 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
-import { ComponentChildren, Fragment, h } from "preact";
+import { Fragment, h } from "preact";
 import { tw } from "@twind";
-import Header from "../islands/Header.tsx";
-import Counter from "../islands/Counter.tsx";
+import Layout from '../components/Layout.tsx';
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <img class={tw`w-full md:!w-3/4 lg:!w-2/3 max-w-5xl pt-6 mx-auto`} src="https://res.cloudinary.com/animated-eagle/image/upload/v1612230077/brendonfolsom.com/what-I-can-do.jpg" />
+    <Layout>
+      <img class={tw`w-full md:!w-3/4 lg:!w-2/3 max-w-5xl pt-20 mx-auto`} src="https://res.cloudinary.com/animated-eagle/image/upload/v1612230077/brendonfolsom.com/what-I-can-do.jpg" />
       <div class={tw`flex flex-wrap items-start w-11/12 lg:w-7/12 max-w-3xl bg-coolgray border border-black mx-auto font-ibm-serif mt-6 py-12 shadow-md`}>
         <div class={tw`flex flex-wrap items-start w-full md:!w-1/3 md:border-r border-coolblack text-center md:text-right pr-3`}>
           <span class={tw`w-full`}>development project</span>
           <a href="https://www.parosfilms.com/" class={tw`w-full`} target="_blank">
             <span class={tw`text-sm underline`}>Paros Films</span>
           </a>
-          <div class={tw`flex font-thin text-xs text-center md:text-right pt-3 md:pl-4 mx-auto md:mx-0 md:ml-auto`}>
+          <div class={tw`w-full font-thin text-xs text-center md:text-right pt-3`}>
             11ty | AlpineJS | wordpress | tailwindCSS
           </div>
         </div>
@@ -30,7 +28,7 @@ export default function Home() {
           <a href="https://www.mixwithintegrity.com/" class={tw`w-full`} target="_blank">
             <span class={tw`text-sm underline`}>Integrity Compounding Pharmacy</span>
           </a>
-          <div class={tw`flex font-thin text-xs text-center md:text-right pt-3 md:pl-4 mx-auto md:mx-0 md:ml-auto`}>
+          <div class={tw`w-full font-thin text-xs text-center md:text-right pt-3`}>
             11ty | AlpineJS | wordpress | tailwindCSS
           </div>
         </div>
@@ -44,7 +42,7 @@ export default function Home() {
           <a href="https://www.abidecares.com/" class={tw`w-full`} target="_blank">
             <span class={tw`text-sm underline`}>Abide Cares</span>
           </a>
-          <div class={tw`flex font-thin text-xs text-center md:text-right pt-3 md:pl-4 mx-auto md:mx-0 md:ml-auto`}>
+          <div class={tw`w-full font-thin text-xs text-center md:text-right pt-3`}>
             11ty | AlpineJS | wordpress | tailwindCSS
           </div>
         </div>
@@ -58,7 +56,7 @@ export default function Home() {
           <a href="https://sequence-events.com/" class={tw`w-full`} target="_blank">
             <span class={tw`text-sm underline`}>sequence-events.com</span>
           </a>
-          <div class={tw`flex font-thin text-xs text-center md:text-right pt-3 md:pl-4 mx-auto md:mx-0 md:ml-auto`}>
+          <div class={tw`w-full font-thin text-xs text-center md:text-right pt-3`}>
             11ty | wordpress | hubspot | tailwindCSS
           </div>
         </div>
@@ -72,7 +70,7 @@ export default function Home() {
           <a href="https://www.bullochacademy.com/" class={tw`w-full`} target="_blank">
             <span class={tw`text-sm underline`}>bullochacademy.com</span>
           </a>
-          <div class={tw`flex font-thin text-xs text-center md:text-right pt-3 md:pl-4 mx-auto md:mx-0 md:ml-auto`}>
+          <div class={tw`w-full font-thin text-xs text-center md:text-right pt-3`}>
             11ty | wordpress | tailwindCSS
           </div>
         </div>
@@ -86,7 +84,7 @@ export default function Home() {
           <a href="https://www.greenzero.us/" class={tw`w-full`} target="_blank">
             <span class={tw`text-sm underline`}>around 40 websites</span>
           </a>
-          <div class={tw`flex font-thin text-xs text-center md:text-right pt-3 md:pl-4 mx-auto md:mx-0 md:ml-auto`}>
+          <div class={tw`w-full font-thin text-xs text-center md:text-right pt-3`}>
             linode | inmotion | cpanel | WHM
           </div>
         </div>
@@ -94,6 +92,12 @@ export default function Home() {
           In late 2020, I purchased the hosting clientele of another company. The 40-something sites are all on Wordpress, and most were hosted on a dedicated InMotion server running WHM/Cpanel. I've worked to move about 20 of them to a Linode instance and still host some using InMotion's services. Since the purchase, I've gained experience using WHM/Cpanel as well as a number of Wordpress-focused server management tools. <br /> <br /> <u>Note:</u> <br /> The billing and management of these hosting clients are managed via my LLC (Green Zero Development). You'll find its site linked in this box. Please be gentle. The design is old, bad and neglected.
         </div>
       </div>
-    </>
+
+      <div class={tw`flex flex-wrap items-start w-11/12 lg:w-7/12 mt-2 mb-12 mx-auto font-ibm-serif py-12 text-center md:text-left`}>
+        <div class={tw`w-5/6 leading-relaxed mx-auto`}>
+          That's all the detail I have to share - but definitely not all I have to offer. Take a look at my <a href="/portfolio/" class={tw`underline`}>portfolio</a> or my <a href="/resume/" class={tw`underline`}>resume</a> for a larger picture of my professional experience.
+        </div>
+      </div>
+    </Layout>
   );
 }
