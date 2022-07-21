@@ -1,12 +1,21 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
 import { Fragment, h } from "preact";
+import { Head } from "$fresh/runtime.ts";
 import { tw } from "@twind";
 import Layout from '../components/Layout.tsx';
 
 export default function Home() {
   return (
     <Layout>
+      <Head>
+        <title>Brendon Folsom | just some web developer</title>
+        <meta name="description" content='The official website of Brendon Folsom - the not-famous Front End Developer. Curious about what I can do? Click on in and find out.' />
+        <meta property="og:title" content='Brendon Folsom | just some web developer' />
+        <meta property="og:description" content='The official website of Brendon Folsom - the not-famous Front End Developer. Curious about what I can do? Click on in and find out.' />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content='https://www.brendonfolsom.com/' />
+      </Head>
       <img class={tw`w-full md:!w-3/4 lg:!w-2/3 max-w-5xl pt-20 mx-auto`} src="https://res.cloudinary.com/animated-eagle/image/upload/v1612230077/brendonfolsom.com/what-I-can-do.jpg" />
       <div class={tw`flex flex-wrap items-start w-11/12 lg:w-7/12 max-w-3xl bg-coolgray border border-black mx-auto font-ibm-serif mt-6 py-12 shadow-md`}>
         <div class={tw`flex flex-wrap items-start w-full md:!w-1/3 md:border-r border-coolblack text-center md:text-right pr-3`}>

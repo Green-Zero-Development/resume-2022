@@ -1,12 +1,21 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
 import { Fragment, h } from "preact";
+import { Head } from "$fresh/runtime.ts";
 import { tw } from "@twind";
 import Layout from '../components/Layout.tsx';
 
 export default function Resume() {
   return (
     <Layout>
+        <Head>
+            <title>Resume | Brendon Folsom</title>
+            <meta name="description" content='The resume of Brendon Folsom - the not-famous Front End Developer. Curious about my work experience? Learn more about it here.' />
+            <meta property="og:title" content='Resume | Brendon Folsom' />
+            <meta property="og:description" content='The resume of Brendon Folsom - the not-famous Front End Developer. Curious about my work experience? Learn more about it here.' />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content='https://www.brendonfolsom.com/resume' />
+        </Head>
         <img class={tw`w-full md:w-3/4 lg:w-2/3 max-w-5xl pt-20 pb-6 mx-auto`} src="https://res.cloudinary.com/animated-eagle/image/upload/v1612230084/brendonfolsom.com/resume.jpg" />
         <div class={tw`flex flex-wrap max-w-7xl mx-auto`}>
             <div class={tw`flex flex-wrap w-5/6 mx-auto`}>

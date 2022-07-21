@@ -2,6 +2,7 @@
 /** @jsxFrag Fragment */
 import { Fragment, h } from "preact";
 import { Handlers, PageProps } from "$fresh/server.ts";
+import { Head } from "$fresh/runtime.ts";
 import { tw } from "@twind";
 import Layout from '../components/Layout.tsx';
 
@@ -21,6 +22,14 @@ export default function Portfolio({ data }: PageProps) {
   const sortedProjects = [...data].sort((a, b) => a.weight - b.weight);
   return (
     <Layout>
+        <Head>
+            <title>Portfolio | Brendon Folsom</title>
+            <meta name="description" content='The portfolio of Brendon Folsom - the not-famous Front End Developer. Curious about my previous projects? Learn about them here.' />
+            <meta property="og:title" content='Portfolio | Brendon Folsom' />
+            <meta property="og:description" content='The portfolio of Brendon Folsom - the not-famous Front End Developer. Curious about my previous projects? Learn about them here.' />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content='https://www.brendonfolsom.com/portfolio' />
+        </Head>
         <img class={tw`w-full md:w-3/4 lg:w-2/3 max-w-5xl pt-20 mx-auto`} src="https://res.cloudinary.com/animated-eagle/image/upload/v1612230077/brendonfolsom.com/portfolio.jpg" />
         <div class={tw`flex flex-wrap max-w-7xl items-start text-center mx-auto`}>
             {sortedProjects.map(project => {
