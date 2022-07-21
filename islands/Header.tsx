@@ -22,8 +22,8 @@ export default function Header() {
   const ul = tw`flex font-ibm-serif font-bold lowercase text-white desktop-menu`;
   const mobileul = tw`absolute top-24 left-0 w-full font-ibm-serif font-bold lowercase text-3xl px-6 z-50`;
   const navLink = tw`text-white pr-12 hover:underline desktop-menu-item`;
-  const mobileNavListItem = tw`py-4 md:py-0`;
-  const mobileNavLink = tw`text-black underline py-4 desktop-menu-item`;
+  const mobileNavListItem = tw`flex`;
+  const mobileNavLink = tw`w-full text-black underline py-4 desktop-menu-item`;
   const socialIcons = tw`hidden md:flex items-center`;
   const mobileSocialIcons = tw`absolute top-80 left-0 flex items-center pt-12`;
   const gitHubLink = tw`w-6 mx-6`;
@@ -34,9 +34,9 @@ export default function Header() {
   const mobileMenuClassActive = tw`fixed top-0 left-0 w-full h-screen bg-white`;
   const mobileMenuTrig = tw`md:hidden fixed bottom-0 left-0 w-full pb-16`;
   const mobileMenuTrigActive = tw`hidden absolute bottom-0 left-0 w-full pb-16`;
-  const mobileMenuOuterIcon = tw`relative w-10 mx-auto`;
-  const mobileMenuInnerIcon = tw`absolute w-10 h-8 top-2 bg-white mx-auto z-10`;
-  const mobileMenuIconPath = tw`relative w-10 mx-auto z-20`;
+  const mobileMenuOuterIcon = tw`relative w-12 mx-auto`;
+  const mobileMenuInnerIcon = tw`absolute w-12 h-8 top-2 bg-white mx-auto z-10`;
+  const mobileMenuIconPath = tw`relative w-12 mx-auto z-20`;
   const mobileMenuClose = tw`hidden absolute bottom-0 left-0 w-full pb-16 z-50`;
   const mobileMenuCloseActive = tw`fixed bottom-0 left-0 w-full pb-16`;
   return (
