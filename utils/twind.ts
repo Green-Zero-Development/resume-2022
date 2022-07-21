@@ -83,6 +83,9 @@ export const config: Configuration = {
       color: '#00f',
       textDecoration: 'none'
     },
+    mobileMenuIcon: {
+      backgroundColor: '#ffffff'
+    },
     '@font-face': [
       {
         fontFamily: 'IBM Plex Serif',

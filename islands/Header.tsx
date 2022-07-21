@@ -34,9 +34,11 @@ export default function Header() {
   const mobileMenuClassActive = tw`fixed top-0 left-0 w-full h-screen bg-white`;
   const mobileMenuTrig = tw`md:hidden fixed bottom-0 left-0 w-full pb-16`;
   const mobileMenuTrigActive = tw`hidden absolute bottom-0 left-0 w-full pb-16`;
-  const mobileMenuIcon = tw`w-10 bg-white mx-auto`;
+  const mobileMenuOuterIcon = tw`relative w-10 mx-auto`;
+  const mobileMenuInnerIcon = tw`absolute w-10 h-8 top-2 bg-white mx-auto z-10`;
+  const mobileMenuIconPath = tw`relative w-10 mx-auto z-20`;
   const mobileMenuClose = tw`hidden absolute bottom-0 left-0 w-full pb-16 z-50`;
-  const mobileMenuCloseActive = tw`absolute bottom-0 left-0 w-full pb-16`;
+  const mobileMenuCloseActive = tw`fixed bottom-0 left-0 w-full pb-16`;
   return (
     <section id="header" class={headerSection}>
         <div class={headerBox}>
@@ -72,11 +74,15 @@ export default function Header() {
                 </div>
             </nav>
             <div class={mobileMenuActive ? mobileMenuTrigActive : mobileMenuTrig} onClick={trigMobileMenu}>
-                <svg class={mobileMenuIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM224 368C237.3 368 248 357.3 248 344V280H312C325.3 280 336 269.3 336 256C336 242.7 325.3 232 312 232H248V168C248 154.7 237.3 144 224 144C210.7 144 200 154.7 200 168V232H136C122.7 232 112 242.7 112 256C112 269.3 122.7 280 136 280H200V344C200 357.3 210.7 368 224 368z"/></svg>
+                <div class={mobileMenuOuterIcon}>
+                    <div class={mobileMenuInnerIcon}></div>
+                    <svg class={mobileMenuIconPath} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM224 368C237.3 368 248 357.3 248 344V280H312C325.3 280 336 269.3 336 256C336 242.7 325.3 232 312 232H248V168C248 154.7 237.3 144 224 144C210.7 144 200 154.7 200 168V232H136C122.7 232 112 242.7 112 256C112 269.3 122.7 280 136 280H200V344C200 357.3 210.7 368 224 368z"/></svg>
+                </div>
             </div>
             <div class={mobileMenuActive ? mobileMenuClassActive : mobileMenuClass}>
                 <div class={mobileMenuActive ? mobileMenuCloseActive : mobileMenuClose} onClick={trigMobileMenu}>
-                    <svg class={mobileMenuIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M384 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h320c35.35 0 64-28.65 64-64V96C448 60.65 419.3 32 384 32zM330.3 344.5c8.562 10.11 7.297 25.27-2.828 33.83C323 382.1 317.5 384 312 384c-6.812 0-13.59-2.891-18.34-8.5L224 293.2L154.3 375.5C149.6 381.1 142.8 384 135.1 384C130.5 384 125 382.1 120.5 378.3c-10.12-8.562-11.39-23.72-2.828-33.83L192.6 256L117.7 167.5C109.1 157.4 110.4 142.2 120.5 133.7C130.6 125.1 145.8 126.4 154.3 136.5L224 218.8l69.67-82.34c8.547-10.12 23.72-11.41 33.83-2.828c10.12 8.562 11.39 23.72 2.828 33.83L255.4 256L330.3 344.5z"/></svg>
+                    <div class={mobileMenuInnerIcon}></div>
+                    <svg class={mobileMenuIconPath} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M384 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h320c35.35 0 64-28.65 64-64V96C448 60.65 419.3 32 384 32zM330.3 344.5c8.562 10.11 7.297 25.27-2.828 33.83C323 382.1 317.5 384 312 384c-6.812 0-13.59-2.891-18.34-8.5L224 293.2L154.3 375.5C149.6 381.1 142.8 384 135.1 384C130.5 384 125 382.1 120.5 378.3c-10.12-8.562-11.39-23.72-2.828-33.83L192.6 256L117.7 167.5C109.1 157.4 110.4 142.2 120.5 133.7C130.6 125.1 145.8 126.4 154.3 136.5L224 218.8l69.67-82.34c8.547-10.12 23.72-11.41 33.83-2.828c10.12 8.562 11.39 23.72 2.828 33.83L255.4 256L330.3 344.5z"/></svg>
                 </div>
             </div>
         </div>
